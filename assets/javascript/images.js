@@ -1,7 +1,7 @@
 $(document).ready(function() {
     renderButtons();
 });
-var randomPeople = ["Hakeem Olajuwon", "Rock Hudson", "Marina Abramovic", "Kenneth Anger", "Sid Vicious", "Yayoi Kusama", "Ziggy Stardust", "Stan Brakhage", "DMX", "Manute Bol", "Andrezj Zulawski", "GG Allin", "Rasheed Wallace", "Klaus Kinski", "Busta Rhymes", "Richard Nixon", "Ric Flair", "John Carradine", "Lon Chaney Jr.", "Edward G. Robinson", "Guy Fieri", "Billy Bob Thornton", "Karl Marx", "Gilbert Gottfried", "Agnes Varda", "Udo Kier", "Larry Johnson", "Rico Suave", "Garrincha", "Miles Davis"];
+var randomPeople = ["Hakeem Olajuwon", "Rock Hudson", "Marina Abramovic", "Kenneth Anger", "Sid Vicious", "Yayoi Kusama", "Ziggy Stardust", "Stan Brakhage", "DMX", "Manute Bol", "Andrezj Zulawski", "GG Allin", "Rasheed Wallace", "Klaus Kinski", "Busta Rhymes", "Richard Nixon", "Ric Flair", "John Carradine", "Lon Chaney Jr.", "Edward G. Robinson", "Guy Fieri", "Billy Bob Thornton", "Karl Marx", "Gilbert Gottfried", "Udo Kier", "Larry Johnson", "Cam'Ron", "Garrincha", "Miles Davis", "Ernest Borgnine"];
 
 function renderButtons() {
     $("#buttons-display").empty();
