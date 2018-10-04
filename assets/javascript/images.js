@@ -1,7 +1,7 @@
 $(document).ready(function() {
     renderButtons();
 });
-var randomPeople = ["Hakeem Olajuwon", "Rock Hudson", "Marina Abramovic", "Kenneth Anger", "Sid Vicious", "Yayoi Kusama", "Ziggy Stardust", "Stan Brakhage", "DMX", "Manute Bol", "Andrezj Zulawski", "GG Allin", "Rasheed Wallace", "Klaus Kinski", "Busta Rhymes", "Richard Nixon", "Ric Flair", "John Carradine", "Lon Chaney Jr.", "Edward G. Robinson", "Guy Fieri", "Billy Bob Thornton", "Karl Marx", "Gilbert Gottfried", "Udo Kier", "Larry Johnson", "Cam'Ron", "Garrincha", "Miles Davis", "Ernest Borgnine"];
+var randomPeople = ["Hakeem Olajuwon", "Rock Hudson", "Marina Abramovic", "Kenneth Anger", "Sid Vicious", "Yayoi Kusama", "Ziggy Stardust", "Stan Brakhage", "DMX", "Manute Bol", "Andrezj Zulawski", "GG Allin", "Rasheed Wallace", "Klaus Kinski", "Busta Rhymes", "Richard Nixon", "Ric Flair", "John Carradine", "Lon Chaney Jr.", "Edward G. Robinson", "Guy Fieri", "Karl Marx", "Miles Davis",  "Ernest Borgnine", "Gilbert Gottfried", "Udo Kier", "Chantal Akerman", "Cam'Ron", "Garrincha", "Bruce Nauman"];
 
 function renderButtons() {
     $("#buttons-display").empty();
@@ -27,7 +27,7 @@ $(document).on("click", ".person", function() {
     var type = $(this).data("name");
     console.log(type)
     var search = $(this).attr("data-name");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + search + "&api_key=xCcrRbcoALUlRySaKH6td4TAqg02ltSd&limit=10"; 
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + search + "&api_key=xCcrRbcoALUlRySaKH6td4TAqg02ltSd&limit=7"; 
     $.ajax({
     url: queryURL,
     method: "GET"
@@ -37,7 +37,7 @@ $(document).on("click", ".person", function() {
     for (var i = 0; i < results.length; i++) {
         var gifDiv = $("<div class='returned-image'>");
         var rating = results[i].rating;
-        var p = $("<p>").text("Rating: " + rating);
+        var p = $("<p id='rating'>").text("Rating: " + rating);
         var animated = results[i].images.fixed_height.url;
         var still = results[i].images.fixed_height_still.url;
         var personImage = $("<img>");
@@ -47,12 +47,19 @@ $(document).on("click", ".person", function() {
         personImage.attr("data-state", "still");
         console.log(personImage.attr);
         personImage.addClass("search-image");
-        gifDiv.append(p);
         gifDiv.append(personImage);
+
+        gifDiv.append(p);
         $("#image-area").prepend(gifDiv);
         }
     });
 });
+
+$(document).on("click", ".person", function () {
+    console.log("hey");
+    var images = ["tv.jpg", "fuzz.jpg", "1.jpg", "6.jpg", "fuzz.png", "tv-fuzz.jpg", "bars.png", "8.jpg", "9.jpg", "10.jpg", "3.jpg", "11.jpg", "12.gif", "13.gif", "14.gif", "15.jpg", "16.gif", "17.gif", "18.jpg", "19.jpg", "20.jpg", "21.jpg", "22.jpg", "23.jpg", "24.jpg", "25.jpg"];
+    $("#image-area").css({"background-image": "url(assets/images/" + images[Math.floor(Math.random() * images.length)] + ")"});
+   });
 
 $(document).on("click", ".search-image", function() {
 

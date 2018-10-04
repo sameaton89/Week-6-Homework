@@ -6,6 +6,11 @@
     background: #f0ead6;
     float: right;
     width: 100%;
+    margin-bottom: 20px;
+    /* border-style: solid;
+    border-bottom-width: 1px;
+    border-top-width: 1px;
+    border-color: black; */
 }
 header {
     font-size: 100px;
@@ -23,6 +28,14 @@ button {
     font-size: 20px;
     margin: 4px;
     text-transform: uppercase;
+}
+#rating {
+    width: 150px;
+    height: 30px;
+    background-color: yellow;
+    transform: scaleY(1.5);
+    /* opacity: 0.6;     */
+
 }
 
 #search-input {
@@ -46,6 +59,7 @@ button {
     margin-top: 15px;
     text-transform: uppercase;
     font-style: italic;
+
 }
 
 #image-area {
@@ -53,4 +67,7 @@ button {
     font-size: 20px;
     text-transform: uppercase;
     padding: 10px;
+    /* background-image: url("../images/6.jpg"); */
+    background-size: auto;
 }
+
