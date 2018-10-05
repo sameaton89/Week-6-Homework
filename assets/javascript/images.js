@@ -1,7 +1,7 @@
 $(document).ready(function() {
     renderButtons();
 });
-var randomPeople = ["Hakeem Olajuwon", "Rock Hudson", "Marina Abramovic", "Kenneth Anger", "Sid Vicious", "Yayoi Kusama", "Ziggy Stardust", "Stan Brakhage", "DMX", "Manute Bol", "Andrezj Zulawski", "GG Allin", "Rasheed Wallace", "Klaus Kinski", "Busta Rhymes", "Richard Nixon", "Ric Flair", "John Carradine", "Lon Chaney Jr.", "Edward G. Robinson", "Guy Fieri", "Karl Marx", "Miles Davis",  "Ernest Borgnine", "Gilbert Gottfried", "Udo Kier", "Chantal Akerman", "Cam'Ron", "Garrincha", "Bruce Nauman"];
+var randomPeople = ["Hakeem Olajuwon", "Rock Hudson", "Marina Abramovic", "Kenneth Anger", "Sid Vicious", "Yayoi Kusama", "Ziggy Stardust", "Stan Brakhage", "DMX", "Manute Bol", "Andrezj Zulawski", "GG Allin", "Rasheed Wallace", "Klaus Kinski", "Busta Rhymes", "Richard Nixon", "Ric Flair", "Peter Lorre", "Lon Chaney Jr.", "Edward G. Robinson", "Guy Fieri", "Karl Marx", "Miles Davis",  "Ernest Borgnine", "Gilbert Gottfried", "Udo Kier", "Chantal Akerman", "Cam'Ron", "Garrincha", "Bruce Nauman", "MF Doom"];
 
 function renderButtons() {
     $("#buttons-display").empty();
@@ -22,6 +22,11 @@ $("#add-image").on("click", function(event) {
     console.log(searchResult);
     renderButtons();
 });
+
+$(document).on("click", ".person", function () {
+    var images = ["tv.jpg", "fuzz.jpg", "1.jpg", "6.jpg", "fuzz.png", "tv-fuzz.jpg", "bars.png", "8.jpg", "9.jpg", "10.jpg", "3.jpg", "11.jpg", "12.gif", "13.gif", "14.gif", "15.jpg", "16.gif", "17.gif", "18.jpg", "19.jpg", "20.jpg", "21.jpg", "22.jpg", "23.jpg", "24.jpg", "25.jpg"];
+    $("#image-area").css({"background-image": "url(assets/images/" + images[Math.floor(Math.random() * images.length)] + ")"});
+   });
 
 $(document).on("click", ".person", function() {
     var type = $(this).data("name");
@@ -48,18 +53,11 @@ $(document).on("click", ".person", function() {
         console.log(personImage.attr);
         personImage.addClass("search-image");
         gifDiv.append(personImage);
-
         gifDiv.append(p);
         $("#image-area").prepend(gifDiv);
         }
     });
 });
-
-$(document).on("click", ".person", function () {
-    console.log("hey");
-    var images = ["tv.jpg", "fuzz.jpg", "1.jpg", "6.jpg", "fuzz.png", "tv-fuzz.jpg", "bars.png", "8.jpg", "9.jpg", "10.jpg", "3.jpg", "11.jpg", "12.gif", "13.gif", "14.gif", "15.jpg", "16.gif", "17.gif", "18.jpg", "19.jpg", "20.jpg", "21.jpg", "22.jpg", "23.jpg", "24.jpg", "25.jpg"];
-    $("#image-area").css({"background-image": "url(assets/images/" + images[Math.floor(Math.random() * images.length)] + ")"});
-   });
 
 $(document).on("click", ".search-image", function() {
 
